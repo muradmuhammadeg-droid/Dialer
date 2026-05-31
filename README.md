@@ -37,4 +37,45 @@ A modern, feature-rich Android Dialer application built with Jetpack Compose. Th
 ### Installation
 
 1. Clone the repository:
-   
+   ```bash
+   git clone https://github.com/muradmuhammadeg-droid/Dialer
+   ```
+2. Open the project in Android Studio.
+3. Sync Project with Gradle Files.
+
+### Configuration
+
+#### Google Sign-In
+Replace the `serverClientId` in `MainActivity.kt` with your Web Client ID from the [Google Cloud Console](https://console.cloud.google.com/):
+```kotlin
+val googleIdOption = remember {
+    GetGoogleIdOption.Builder()
+        .setServerClientId("YOUR_CLIENT_ID.apps.googleusercontent.com")
+        .build()
+}
+```
+
+#### GitHub Sign-In
+Replace the placeholders in `MainActivity.kt` with your credentials from [GitHub Developer Settings](https://github.com/settings/developers):
+```kotlin
+val githubClientId = "YOUR_GITHUB_CLIENT_ID"
+val githubClientSecret = "YOUR_GITHUB_CLIENT_SECRET"
+```
+Ensure your **Authorization callback URL** is set to `dialer://github-auth`.
+
+## 📱 Permissions
+
+The app requires the following permissions to function as a dialer:
+- `CALL_PHONE`: To initiate calls.
+- `READ_CONTACTS`: To display your contact list.
+- `READ_PHONE_STATE`: To monitor call status.
+- `CAMERA`: For video call features.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+Copyright (C) 2026 Murad Muhammad
+Licensed under the Apache License, Version 2.0.
